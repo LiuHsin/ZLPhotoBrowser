@@ -99,7 +99,7 @@ class ZLAlbumListCell: UITableViewCell {
         self.countLabel = UILabel()
         self.countLabel.font = getFont(16)
         self.countLabel.textColor = .albumListCountColor
-        self.contentView.addSubview(self.countLabel)
+//        self.contentView.addSubview(self.countLabel)
         
         self.selectBtn = UIButton(type: .custom)
         self.selectBtn.isUserInteractionEnabled = false

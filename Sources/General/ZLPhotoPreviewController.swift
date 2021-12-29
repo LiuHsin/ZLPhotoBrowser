@@ -145,7 +145,7 @@ class ZLPhotoPreviewController: UIViewController {
         self.navBlurView?.frame = self.navView.bounds
         
         self.backBtn.frame = CGRect(x: insets.left, y: insets.top, width: 60, height: 44)
-        self.selectBtn.frame = CGRect(x: self.view.frame.width - 40 - insets.right, y: insets.top + (44 - 25) / 2, width: 25, height: 25)
+        self.selectBtn.frame = CGRect(x: self.view.frame.width - 40 - insets.right, y: insets.top + (44 - 25) / 2, width: 25, height: 20)
         self.indexLabel.frame = self.selectBtn.bounds
         
         self.refreshBottomViewFrame()
@@ -199,7 +199,7 @@ class ZLPhotoPreviewController: UIViewController {
         self.editBtn.frame = CGRect(x: 15, y: btnY, width: min(btnMaxWidth, editBtnW), height: btnH)
         
         let originTitle = localLanguageTextValue(.originalPhoto)
-        let originBtnW = originTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 30
+        let originBtnW = originTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 50
         let originBtnMaxW = min(btnMaxWidth, originBtnW)
         self.originalBtn.frame = CGRect(x: (self.bottomView.bounds.width - originBtnMaxW) / 2 - 5, y: btnY, width: originBtnMaxW, height: btnH)
         
@@ -245,7 +245,7 @@ class ZLPhotoPreviewController: UIViewController {
         self.indexLabel.font = getFont(14)
         self.indexLabel.textColor = .white
         self.indexLabel.textAlignment = .center
-        self.indexLabel.layer.cornerRadius = 25.0 / 2
+        self.indexLabel.layer.cornerRadius = 20.0 / 2
         self.indexLabel.layer.masksToBounds = true
         self.indexLabel.isHidden = true
         self.selectBtn.addSubview(self.indexLabel)

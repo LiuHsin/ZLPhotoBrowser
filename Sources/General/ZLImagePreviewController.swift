@@ -99,8 +99,8 @@ public class ZLImagePreviewController: UIViewController {
     @objc public init(
         datas: [Any],
         index: Int = 0,
-        showSelectBtn: Bool = true,
-        showBottomView: Bool = true,
+        showSelectBtn: Bool = false,
+        showBottomView: Bool = false,
         urlType: ( (URL) -> ZLURLType )? = nil,
         urlImageLoader: ( (URL, UIImageView, @escaping ( (CGFloat) -> Void ),  @escaping ( () -> Void )) -> Void )? = nil
     ) {

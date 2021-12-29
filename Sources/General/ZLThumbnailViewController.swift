@@ -270,7 +270,7 @@ class ZLThumbnailViewController: UIViewController {
             self.previewBtn.frame = CGRect(x: 15, y: btnY, width: min(btnMaxWidth, previewBtnW), height: btnH)
             
             let originalTitle = localLanguageTextValue(.originalPhoto)
-            let originBtnW = originalTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 30
+            let originBtnW = originalTitle.boundingRect(font: ZLLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width + 50
             let originBtnMaxW = min(btnMaxWidth, originBtnW)
             self.originalBtn.frame = CGRect(x: (self.bottomView.bounds.width - originBtnMaxW) / 2 - 5, y: btnY, width: originBtnMaxW, height: btnH)
             
@@ -306,7 +306,7 @@ class ZLThumbnailViewController: UIViewController {
         
         if let effect = ZLPhotoConfiguration.default().bottomViewBlurEffectOfAlbumList {
             self.bottomBlurView = UIVisualEffectView(effect: effect)
-            self.bottomView.addSubview(self.bottomBlurView!)
+//            self.bottomView.addSubview(self.bottomBlurView!)
         }
         
         if self.showLimitAuthTipsView {
@@ -1310,7 +1310,7 @@ class ZLEmbedAlbumListNavView: UIView {
         
         if let effect = ZLPhotoConfiguration.default().navViewBlurEffectOfAlbumList {
             navBlurView = UIVisualEffectView(effect: effect)
-            addSubview(navBlurView!)
+//            addSubview(navBlurView!)
         }
         
         titleBgControl.backgroundColor = .navEmbedTitleViewBgColor

@@ -217,7 +217,9 @@ extension ZLEmbedAlbumListView: UITableViewDataSource, UITableViewDelegate {
         
         cell.configureCell(model: m, style: .embedAlbumList)
         
-        cell.selectBtn.isSelected = m == self.selectedAlbum
+//        cell.selectBtn.isSelected = m == self.selectedAlbum
+        
+        cell.titleLabel.textColor = m == self.selectedAlbum ? UIColor.white : UIColor(red: 0.55, green: 0.57, blue: 0.62, alpha: 1)
         
         return cell
     }
