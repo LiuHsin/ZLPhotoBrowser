@@ -40,7 +40,7 @@ struct ZLLayout {
     
     static let bottomToolTitleFont = getFont(17)
     
-    static let bottomToolBtnCornerRadius: CGFloat = 5
+    static let bottomToolBtnCornerRadius: CGFloat = 10
     
     static let thumbCollectionViewItemSpacing: CGFloat = 2
     

@@ -1298,9 +1298,9 @@ class ZLEmbedAlbumListNavView: UIView {
             self.albumTitleLabel.frame = CGRect(x: 10, y: 0, width: albumTitleW, height: ZLEmbedAlbumListNavView.titleViewH)
             self.arrow.frame = CGRect(
                 x: self.albumTitleLabel.frame.maxX + 5,
-                y: (ZLEmbedAlbumListNavView.titleViewH - ZLEmbedAlbumListNavView.arrowH) / 2.0,
-                width: ZLEmbedAlbumListNavView.arrowH,
-                height: ZLEmbedAlbumListNavView.arrowH
+                y: (ZLEmbedAlbumListNavView.titleViewH - 5.5) / 2.0,
+                width: 11.5,
+                height: 5.5
             )
         }
     }
