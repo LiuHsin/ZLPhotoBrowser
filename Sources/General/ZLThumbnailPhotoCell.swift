@@ -103,7 +103,7 @@ class ZLThumbnailPhotoCell: UICollectionViewCell {
         self.contentView.addSubview(self.btnSelect)
         
         self.indexLabel = UILabel()
-        self.indexLabel.layer.cornerRadius = 20.0 / 2
+        self.indexLabel.layer.cornerRadius = 22.0 / 2
         self.indexLabel.layer.masksToBounds = true
         self.indexLabel.textColor = .white
         self.indexLabel.font = getFont(14)
@@ -143,7 +143,8 @@ class ZLThumbnailPhotoCell: UICollectionViewCell {
         self.imageView.frame = self.bounds
         self.coverView.frame = self.bounds
         self.btnSelect.frame = CGRect(x: self.bounds.width - 30, y: 8, width: 25, height: 20)
-        self.indexLabel.frame = self.btnSelect.bounds
+//        self.indexLabel.frame = self.btnSelect.bounds
+        self.indexLabel.frame = CGRect(x: -1, y: -1, width: 27, height: 22)
         self.bottomShadowView.frame = CGRect(x: 0, y: self.bounds.height - 25, width: self.bounds.width, height: 25)
         self.videoTag.frame = CGRect(x: 5, y: 1, width: 20, height: 15)
         self.livePhotoTag.frame = CGRect(x: 5, y: -1, width: 20, height: 20)

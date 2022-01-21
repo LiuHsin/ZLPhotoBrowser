@@ -146,7 +146,8 @@ class ZLPhotoPreviewController: UIViewController {
         
         self.backBtn.frame = CGRect(x: insets.left, y: insets.top, width: 60, height: 44)
         self.selectBtn.frame = CGRect(x: self.view.frame.width - 40 - insets.right, y: insets.top + (44 - 25) / 2, width: 25, height: 20)
-        self.indexLabel.frame = self.selectBtn.bounds
+//        self.indexLabel.frame = self.selectBtn.bounds
+        self.indexLabel.frame = CGRect(x: -1, y: -1, width: 27, height: 22)
         
         self.refreshBottomViewFrame()
         
@@ -245,7 +246,7 @@ class ZLPhotoPreviewController: UIViewController {
         self.indexLabel.font = getFont(14)
         self.indexLabel.textColor = .white
         self.indexLabel.textAlignment = .center
-        self.indexLabel.layer.cornerRadius = 20.0 / 2
+        self.indexLabel.layer.cornerRadius = 22.0 / 2
         self.indexLabel.layer.masksToBounds = true
         self.indexLabel.isHidden = true
         self.selectBtn.addSubview(self.indexLabel)

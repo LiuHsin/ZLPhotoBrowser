@@ -518,7 +518,8 @@ class ZLVideoPreviewCell: ZLPreviewBaseCell {
         self.playerLayer?.frame = self.bounds
         self.resizeImageView(imageView: self.imageView, asset: self.model.asset)
         let insets = deviceSafeAreaInsets()
-        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: self.bounds.width, height: self.bounds.height - insets.top - insets.bottom)
+//        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: self.bounds.width, height: self.bounds.height - insets.top - insets.bottom)
+        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: 51, height: 51)
         self.syncErrorLabel.frame = CGRect(x: 10, y: insets.top + 60, width: self.bounds.width - 20, height: 35)
         self.progressView.frame = CGRect(x: self.bounds.width / 2 - 30, y: self.bounds.height / 2 - 30, width: 60, height: 60)
     }
@@ -544,7 +545,7 @@ class ZLVideoPreviewCell: ZLPreviewBaseCell {
         self.contentView.addSubview(self.progressView)
         
         self.playBtn = UIButton(type: .custom)
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
         self.playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
         self.contentView.addSubview(self.playBtn)
         
@@ -601,7 +602,7 @@ class ZLVideoPreviewCell: ZLPreviewBaseCell {
     }
     
     func configurePlayerLayer(_ item: AVPlayerItem) {
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
         self.playBtn.isEnabled = true
         
         self.player = AVPlayer(playerItem: item)
@@ -653,13 +654,13 @@ class ZLVideoPreviewCell: ZLPreviewBaseCell {
         if seekToZero {
             self.player?.seek(to: .zero)
         }
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
         self.singleTapBlock?()
     }
     
     func pauseWhileTransition() {
         self.player?.pause()
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
     }
     
     override func animateImageFrame(convertTo view: UIView) -> CGRect {
@@ -707,7 +708,7 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
     
     private func setupUI() {
         self.playBtn = UIButton(type: .custom)
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
         self.playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
         self.contentView.addSubview(self.playBtn)
         
@@ -770,7 +771,7 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
         if seekToZero {
             self.player?.seek(to: .zero)
         }
-        self.playBtn.setImage(getImage("zl_playVideo"), for: .normal)
+        self.playBtn.setImage(getImage("zl_playVideo_large"), for: .normal)
         self.singleTapBlock?()
     }
     
