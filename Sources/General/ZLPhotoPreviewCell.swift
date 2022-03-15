@@ -518,8 +518,8 @@ class ZLVideoPreviewCell: ZLPreviewBaseCell {
         self.playerLayer?.frame = self.bounds
         self.resizeImageView(imageView: self.imageView, asset: self.model.asset)
         let insets = deviceSafeAreaInsets()
-//        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: self.bounds.width, height: self.bounds.height - insets.top - insets.bottom)
-        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: 51, height: 51)
+        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: self.bounds.width, height: self.bounds.height - insets.top - insets.bottom)
+//        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: 51, height: 51)
         self.syncErrorLabel.frame = CGRect(x: 10, y: insets.top + 60, width: self.bounds.width - 20, height: 35)
         self.progressView.frame = CGRect(x: self.bounds.width / 2 - 30, y: self.bounds.height / 2 - 30, width: 60, height: 60)
     }
@@ -704,6 +704,7 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
         self.playerLayer?.frame = self.bounds
         let insets = deviceSafeAreaInsets()
         self.playBtn.frame = CGRect(x: 0, y: insets.top, width: self.bounds.width, height: self.bounds.height - insets.top - insets.bottom)
+//        self.playBtn.frame = CGRect(x: 0, y: insets.top, width: 51, height: 51)
     }
     
     private func setupUI() {
