@@ -80,6 +80,8 @@ public class ZLImagePreviewController: UIViewController {
     
     @objc public var doneBlock: ( ([Any]) -> Void )?
     
+    @objc public var longPressBlock: ((UIImage) -> Void)?
+    
     @objc public var videoHttpHeader: [String: Any]?
     
     public override var prefersStatusBarHidden: Bool {
@@ -505,7 +507,8 @@ extension ZLImagePreviewController: UICollectionViewDataSource, UICollectionView
         }
         
         (baseCell as? ZLLocalImagePreviewCell)?.longPressBlock = { [weak self] in
-            self?.showSaveImageAlert()
+            self?.longPressBlock?(baseCell.currentImage ?? UIImage())
+//            self?.showSaveImageAlert()
         }
         
         return baseCell
