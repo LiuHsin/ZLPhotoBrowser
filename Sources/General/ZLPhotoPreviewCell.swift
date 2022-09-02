@@ -679,6 +679,8 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
     
     var playBtn: UIButton!
     
+    var videoLongPressBlock: ( () -> Void )?
+    
     var isPlaying: Bool {
         if self.player != nil, self.player?.rate != 0 {
             return true
@@ -713,6 +715,10 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
         self.playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
         self.contentView.addSubview(self.playBtn)
         
+        let longGes = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
+        longGes.minimumPressDuration = 0.5
+        self.addGestureRecognizer(longGes)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
@@ -730,6 +736,12 @@ class ZLNetVideoPreviewCell: ZLPreviewBaseCell {
         self.playerLayer?.frame = self.bounds
         self.layer.insertSublayer(self.playerLayer!, at: 0)
         NotificationCenter.default.addObserver(self, selector: #selector(playFinish), name: .AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+    }
+    
+    @objc func longPressAction(_ ges: UILongPressGestureRecognizer) {
+        if ges.state == .began {
+            self.videoLongPressBlock?()
+        }
     }
     
     @objc func playBtnClick() {
