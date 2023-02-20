@@ -200,7 +200,7 @@ public class ZLImagePreviewController: UIViewController {
         
         // nav view
         self.navView = UIView()
-        self.navView.backgroundColor = .navBarColorOfPreviewVC
+        self.navView.backgroundColor = zlRGB(40, 50, 67)
         self.view.addSubview(self.navView)
         
         if let effect = ZLPhotoConfiguration.default().navViewBlurEffectOfPreview {
