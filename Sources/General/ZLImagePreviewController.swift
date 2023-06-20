@@ -195,7 +195,7 @@ public class ZLImagePreviewController: UIViewController {
     }
     
     private func setupUI() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = zlRGB(40, 50, 67)
         self.automaticallyAdjustsScrollViewInsets = false
         
         // nav view
